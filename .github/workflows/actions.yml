@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Terraform Init
+      uses: hashicorp/terraform-github-actions/apply@v0.4.0
+      run: terraform init
+
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
