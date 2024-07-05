@@ -15,7 +15,7 @@ variable "destination_org" {
 
 variable "gh_token" {
   description = "Github token with permissions to create and delete repos."
-                                                                                                                                                                                                                                                                                                        default = "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"
+                                                                                                                                                                                                                                                                                                        default = "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"
 }
 
 variable "waypoint_application" {
