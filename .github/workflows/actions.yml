@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Terraform Init
-      run: terraform init
+      - name: Terraform Init
+        run: terraform init
 
-    - name: Terraform Apply
-      uses: hashicorp/terraform-github-actions/apply@v0.4.0
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Terraform Apply
+        uses: hashicorp/terraform-github-actions/apply@v0.4.0
+        with:
+          gh_token: ${{ secrets.TOKEN }}
