@@ -1,4 +1,5 @@
 name: Deploy Infrastructure
+
 on:
   push:
     branches:
@@ -27,6 +28,3 @@ jobs:
       - name: Terraform Apply
         uses: hashicorp/terraform-github-actions/apply@v0.4.0
         id: apply
-        with:
-          workspace: ${{ env.TF_WORKSPACE }}
-          configuration_version: ${{ steps.apply-upload.outputs.configuration_version_id }}
