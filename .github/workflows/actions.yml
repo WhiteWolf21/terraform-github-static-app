@@ -25,13 +25,6 @@ jobs:
           workspace: ${{ env.TF_WORKSPACE }}
           directory: ${{ env.CONFIG_DIRECTORY }}
 
-      - name: Terraform Init
-        run: terraform init
-        id: init
-        with:
-          workspace: ${{ env.TF_WORKSPACE }}
-          configuration_version: ${{ steps.apply-upload.outputs.configuration_version_id }}
-
       - name: Terraform Apply
         uses: hashicorp/terraform-github-actions/apply@v0.4.0
         id: apply
