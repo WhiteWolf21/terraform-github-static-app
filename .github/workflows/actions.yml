@@ -14,6 +14,9 @@ env:
 
 jobs:
   terraform:
+    defaults:
+      run:
+        working-directory: ${{ env.CONFIG_DIRECTORY }}
     name: Deploy Site
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +28,8 @@ jobs:
           workspace: ${{ env.TF_WORKSPACE }}
           directory: ${{ env.CONFIG_DIRECTORY }}
 
+      - name: Terraform Init
+        run: terraform init
+      
       - name: Terraform Apply
-        uses: hashicorp/terraform-github-actions/apply@v0.4.0
-        id: apply
+        run: terraform apply -auto-approve
