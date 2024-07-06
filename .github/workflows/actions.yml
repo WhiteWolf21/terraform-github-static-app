@@ -18,6 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Upload Configuration
+        uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
+        id: apply-upload
+        with:
+          workspace: ${{ env.TF_WORKSPACE }}
+          directory: ${{ env.CONFIG_DIRECTORY }}
+
       - name: Terraform Init
         run: terraform init
 
