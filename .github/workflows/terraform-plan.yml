@@ -9,7 +9,6 @@ env:
   TF_CLOUD_ORGANIZATION: "WhiteWolf21"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "terraform-push-github-static-app"
-  TF_VAR_gh_token: ${{ secrets.TOKEN }}
   CONFIG_DIRECTORY: "./"
 
 jobs:
@@ -32,6 +31,7 @@ jobs:
         uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.0
         id: plan-run
         with:
+          run: terraform apply -var"gh_token=${{ secrets.TOKEN }}" -auto-approve
           workspace: ${{ env.TF_WORKSPACE }}
           configuration_version: ${{ steps.plan-upload.outputs.configuration_version_id }}
           plan_only: true
