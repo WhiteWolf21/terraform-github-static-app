@@ -13,7 +13,7 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
-  tf_fmt:
+  terraform:
     name: Deploy Site
     runs-on: ubuntu-latest
     steps:
