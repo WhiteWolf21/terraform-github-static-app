@@ -23,4 +23,4 @@ jobs:
     - name: Terraform Apply
       uses: hashicorp/terraform-github-actions/apply@v0.4.0
       with:
-        gh_token: ${{ secrets.TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
